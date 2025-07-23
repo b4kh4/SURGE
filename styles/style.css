@@ -130,8 +130,8 @@ main.main {
     text-align: center;
     background: rgba(29, 28, 28, 0.9);
     padding: 16px;
-    min-width: 360px;
-    max-width: 90%;
+    width: 360px;
+    max-width: 90vw;
     border-radius: 24px;
     display: flex;
     flex-direction: column;
@@ -173,7 +173,7 @@ main.main {
 
 .user-info .profile #username {
     color: white;
-    font-size: 1.6em;
+    font-size: 1.2em;
 }
 
 .user-info .profile .buttons {
@@ -207,7 +207,23 @@ main.main {
     position: relative;
 }
 
-.user-info .friends p  {
+.user-info .friends .warning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.user-info .friends .warning img {
+    width: 42px;
+    aspect-ratio: 1/1;
+    background: #cccccc99;
+    border-radius: 100%;
+    padding: 2px;
+}
+
+.user-info .friends .warning p  {
     color: whitesmoke;
 }
 
@@ -220,7 +236,7 @@ main.main {
     transform: translate(-50%, 50%);
     z-index: 2;
     pointer-events: auto;
-    background: #1fdfcf;
+    background: #30D5C8;
     border-radius: 12px;
     display: flex;
     align-items: center;

@@ -40,15 +40,18 @@
                 <img src="../images/ui/user.svg" alt="user" id="picture">
                 <div id="status-and-username-row">
                     <span id="status">●</span>
-                    <p id="username">NULL</p>
+                    <p id="username">Имя не найдено</p>
                 </div>
                 <div class="buttons">
-                    <button>Удалить</button>
-                    <button>Выйти</button>
+                    <button id="delete">Удалить</button>
+                    <button id="log-out">Выйти</button>
                 </div>
             </div>
             <div class="friends">
-                <p>Похоже у вас нет друзей...</p>
+                <div class="warning">
+                    <img src="../images/ui/sad.svg" alt="sad :(">
+                    <p>Похоже у вас нет друзей...</p>
+                </div>
                 <div class="friends-list">
                     <!-- Здесь список друзей -->
                 </div>

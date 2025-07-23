@@ -19,6 +19,15 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+const allButtons = [".main .buttons #rooms", ".main .buttons #create-room", ".user-info .buttons #delete",
+                    ".user-info .buttons #log-out", ".friends #add-friend"];
+for (var i = 0; i < allButtons.length; i++) {
+    var element = document.querySelector(allButtons[i]);
+    element.addEventListener("click", function () {
+        alert("Тиш 🤫")
+    })
+}
+
 async function getUsernameByUID(uid) {
     console.log(uid)
     try {
@@ -45,14 +54,17 @@ async function showUsername() {
         return;
     }
 
+    document.querySelector('.header .profile #username').innerHTML = "Загрузка...";
+        document.querySelector('.user-info .profile #username').innerHTML = "Загрузка...";
     var warning = document.getElementById("warning");
     warning.style.display = 'none';
 
     const username = await getUsernameByUID(uid);
     if (username) {
-        document.getElementById('username').innerHTML = username;
+        document.querySelector('.header .profile #username').innerHTML = username;
+        document.querySelector('.user-info .profile #username').innerHTML = username;
     } else {
-        document.getElementById('username').innerHTML = "Имя не найдено";
+        document.querySelector('.header .profile #username').innerHTML = "Имя не найдено";
     }
 }
 showUsername();
@@ -63,6 +75,16 @@ closeBtn.addEventListener("click", function () {
 })
 
 const profile = document.getElementsByClassName("profile")[0];
+const friendsBtn = document.getElementById("friends");
 profile.addEventListener("click", function () {
-    displayModalWindow(document.getElementById("back-overlay"), true)
+    openUI();
 })
+friendsBtn.addEventListener("click", function () {
+    openUI();
+})
+
+function openUI() {
+    const uid = localStorage.getItem("uid");
+    if (uid) displayModalWindow(document.getElementById("back-overlay"), true)
+        else window.open("authorization.html", "_self")
+}
