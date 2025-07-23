@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html lang="ru">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+            <title>SURGE - Авторизация</title>
+            <link rel="stylesheet" href="../styles/authorisation.css">
+        </head>
+        <body>
+            <form>
+                <button formaction="index.html" formmethod="get" class="back">
+                    <img src="../images/ui/left-arrow.svg" alt="back">
+                </button>
+            </form>
+
+
+            <div class="background">
+                <div class="pulse"></div>
+            </div>
+
+            <main class="main">
+                <!-- Регистрация -->
+                <div class="register-container" id="register-box">
+                    <h2>Регистрация</h2>
+                    <form id="registerForm">
+                        <input type="text" id="registerUsername" placeholder="Имя пользователя" maxlength="12" required>
+                        <input type="email" id="registerEmail" placeholder="E-mail" required>
+                        <input type="password" id="registerPassword" placeholder="Пароль" minlength="8" required>
+                        <button type="submit">Создать</button>
+                    </form>
+                    <a id="open-login">Уже есть аккаунт? Войдите</a>
+                    <p id="registerError"></p>
+                </div>
+
+                <!-- Вход -->
+                <div class="login-container" id="login-box">
+                    <h2>Вход</h2>
+                    <form id="loginForm">
+                        <input type="email" id="loginEmail" placeholder="Имя пользователя / E-mail" required>
+                        <input type="password" id="loginPassword" placeholder="Пароль" minlength="8" required>
+                        <button type="submit">Вход</button>
+                    </form>
+                    <a id="open-register">Нет аккаунта? Зарегистрируйтесь</a>
+                    <p id="loginError"></p>
+                </div>
+            </main>
+
+            <div id="modal-overlay">
+                <div class="modal">
+                    <h2 class="modal-title">Готово!</h2>
+                    <p class="modal-text">Вы успешно вошли в свой аккауант. Теперь вы можете пользоваться всеми функциями. </p>
+                    <div class="modal-buttons">
+                        <button id="ok-btn">ОК</button>
+                    </div>
+                </div>
+            </div>
+
+            <script src="../script/authorisation.js" type="module"></script>
+        </body>
+    </html>

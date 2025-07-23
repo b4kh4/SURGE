@@ -1,0 +1,206 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background: #161616;
+    font-family: 'Montserrat', sans-serif;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+button, a, div {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.back {
+    width: 50px;
+    aspect-ratio: 1/1;
+    background: #ffffffc3;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    cursor: pointer;
+}
+
+.back img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 14px;
+}
+
+.background {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #220000, #000000 90%);
+    z-index: -2;
+    overflow: hidden;
+}
+
+.pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    aspect-ratio: 1/1;
+    background: radial-gradient(circle, #30D5C8, transparent 50%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulseGlow 6s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(5);
+        opacity: 0.6;
+    }
+}
+
+main.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-container, .login-container {
+    width: 90vw;
+    max-width: 360px;
+    background: #101010e0;
+    padding: 28px 28px 0 28px;
+    border: 3px solid whitesmoke;
+    border-radius: 24px;
+    box-shadow: #101010e0 0px 0 30px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.register-container h2, .login-container h2 {
+    color: white;
+}
+
+.register-container form, .login-container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.register-container form *, .login-container form * {
+    width: 100%;
+    height: 42px;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 10px;
+}
+
+.register-container form input, .login-container form input {
+    background: #101010e5;
+    color: #fff;
+}
+
+.register-container form input:active, .login-container form input:active {
+    outline: #30D5C8 solid 1px;
+}
+
+.register-container form button, .login-container form button {
+    cursor: pointer;
+}
+
+.register-container a, .login-container a {
+    color: whitesmoke;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.register-container #registerError, .login-container #loginError {
+    color: #ff0000bb;
+    margin-bottom: 20px;
+}
+
+.register-container {
+    display: flex;
+}
+
+.login-container {
+    display: none;
+}
+
+#modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.modal {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 350px;
+    padding: 20px 16px 0 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #000;
+}
+
+.modal-text {
+    font-size: 15px;
+    color: #333;
+    margin: 0 0 20px 0;
+}
+
+.modal-buttons {
+    display: flex;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    flex: 1;
+    padding: 12px 0;
+    font-size: 17px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007aff;
+}
+
+.ok-btn {
+    border-right: 1px solid #ccc;
+    border-bottom-left-radius: 20px;
+}
