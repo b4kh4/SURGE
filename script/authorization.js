@@ -103,6 +103,6 @@ openRegisterBtn.addEventListener("click", function () {
 
 const modalBtn = document.getElementById('ok-btn');
 modalBtn.addEventListener("click", function () {
-    displayModalWindow(false);
+    displayModalWindow(document.getElementById("modal-overlay"), false);
     window.open("index.html", "_self")
 })
