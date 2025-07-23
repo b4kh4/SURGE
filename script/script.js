@@ -24,7 +24,7 @@ const allButtons = [".main .buttons #rooms", ".main .buttons #create-room", ".us
 for (var i = 0; i < allButtons.length; i++) {
     var element = document.querySelector(allButtons[i]);
     element.addEventListener("click", function () {
-        alert("Тиш 🤫")
+        alert("Тиш 🤫");
     })
 }
 
