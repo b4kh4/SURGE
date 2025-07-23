@@ -11,6 +11,8 @@ import {
     setDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
+import { displayModalWindow } from "../script/displayModalWindow.js"
+
 // Конфигурация Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyCNJL3hUP0RLLRfHc4GK96k8M6y8z-jP-Q",
